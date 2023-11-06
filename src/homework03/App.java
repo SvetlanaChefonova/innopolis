@@ -1,7 +1,5 @@
 package homework03;
 
-
-
 public class App {
     public static void main(String [] args){
         Televisor samsung = new Televisor("Samsung",20000);
@@ -23,5 +21,5 @@ public class App {
 
 
 
-}
+    }
 }
