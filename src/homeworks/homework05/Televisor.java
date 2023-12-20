@@ -8,9 +8,30 @@ public class Televisor {
     private int chanel;
     private int volume;
     private boolean turn;
+    public Televisor() {
+    }
+
+    public Televisor(String name) {
+        this.name = name;
+    }
+
+    public Televisor(
+            String name,
+            int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Televisor(String name, int price, int chanel, int volume, boolean turn) {
+        this.name = name;
+        this.price = price;
+        this.chanel = chanel;
+        this.volume = volume;
+        this.turn = turn;
+    }
 
     public boolean turn(){
-        return false;
+        return turn;
     };
 
     public String getName() {
@@ -41,27 +62,16 @@ public class Televisor {
         }
     }
 
-
-    public Televisor() {
+      @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Televisor televisor = (Televisor) o;
+        return getChanel() == televisor.getChanel();
     }
-
-    public Televisor(String name) {
-        this.name = name;
-    }
-
-    public Televisor(
-           String name,
-           int price) {
-      this.name = name;
-      this.price = price;
-    }
-
-    public Televisor(String name, int price, int chanel, int volume, boolean turn) {
-        this.name = name;
-        this.price = price;
-        this.chanel = chanel;
-        this.volume = volume;
-        this.turn = turn;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getChanel());
     }
 
     @Override
@@ -73,16 +83,5 @@ public class Televisor {
                 ", volume=" + volume +
                 ", turn=" + turn +
                 '}';
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Televisor televisor = (Televisor) o;
-        return getChanel() == televisor.getChanel();
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(getChanel());
     }
 }

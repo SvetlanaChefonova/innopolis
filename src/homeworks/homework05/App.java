@@ -9,7 +9,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int i;
         int minCount = 0;
-        int maxCount = 2;
+        int maxCount = 10;
 
         Televisor [] televisors = new Televisor[maxCount];
 
@@ -51,16 +51,23 @@ public class App {
 
                 }
 
+
+        }
+
             System.out.println("Введите допустимое значение громкости звука, целое число от 50 до 70:");
             int maxVolume = scanner.nextInt();
 
             for (Televisor televisor : televisors) {
-                if (televisor.getVolume() < maxVolume && televisor.turn() == true) {
-                    System.out.println("Включенный телевизор" + televisor.getName() + ", громкость" + televisor.getVolume());
-                    // System.out.println("Включенные телевизоры, у которых звук является допустимым" + new Televisor());
-                }
+                if (televisor.getVolume() < maxVolume && televisor.turn()) {
 
-            }
-        }
+                    System.out.println("Включенный телевизор, у которого звук является допустимым: " + televisor.getName());
+
+                      }
+
+
+                 }
+
+
+
     }
 }
